@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-/* Function to count frequency of a given character */
+
 int char_freq(char str[], char ch)
 {
     int i, count = 0;
@@ -14,7 +14,7 @@ int char_freq(char str[], char ch)
     return count;
 }
 
-/* Function to count number of words */
+
 int word_count(char str[])
 {
     int words = 0;
@@ -32,25 +32,26 @@ int main()
     int i;
 
     printf("Enter a string: ");
-    gets(str);   // used for simplicity (exam use)
+    gets(str);   
 
-    /* Frequency of a character */
+
     printf("Enter a character to find its frequency: ");
     scanf("%c", &ch);
 
     printf("Frequency of '%c' = %d\n", ch, char_freq(str, ch));
 
-    /* Word count */
+   
     printf("Number of words = %d\n", word_count(str));
 
-    /* Frequency of each alphabet */
+   
     printf("\nFrequency of each alphabet:\n");
     for (i = 'a'; i <= 'z'; i++)
     {
-        int f = char_freq(str, i) + char_freq(str, i - 32); // lower + upper
+        int f = char_freq(str, i) + char_freq(str, i - 32);
         if (f > 0)
             printf("%c : %d\n", i, f);
     }
 
     return 0;
 }
+
