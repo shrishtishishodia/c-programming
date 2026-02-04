@@ -1,9 +1,8 @@
 #include <stdio.h>
 
-// Function using call by reference
 void increase(int *x)
 {
-    *x = *x + 1;   // increase value by 1
+    *x = *x + 1;  
 }
 
 int main()
@@ -12,9 +11,10 @@ int main()
 
     printf("Before increase: %d\n", a);
 
-    increase(&a);   // passing address of a
+    increase(&a);   
 
     printf("After increase: %d\n", a);
 
     return 0;
 }
+
