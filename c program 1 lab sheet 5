@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+typedef struct
+{
+    float real;
+    float imag;
+} Complex;
+
+void input(Complex *n);
+Complex Add(Complex n1, Complex n2);
+Complex Sub(Complex n1, Complex n2);
+Complex Mul(Complex n1, Complex n2);
+void display(Complex n);
+
+void main()
+{
+    Complex num1, num2, num3;
+
+    input(&num1);
+    input(&num2);
+
+    num3 = Add(num1, num2);
+    display(num3);
+
+    num3 = Sub(num1, num2);
+    display(num3);
+
+    num3 = Mul(num1, num2);
+    display(num3);
+}
+
+void input(Complex *n)
+{
+    scanf("%f", &n->real);
+    scanf("%f", &n->imag);
+}
+
+Complex Add(Complex n1, Complex n2)
+{
+    Complex temp;
+    temp.real = n1.real + n2.real;
+    temp.imag = n1.imag + n2.imag;
+    return temp;
+}
+
+Complex Sub(Complex n1, Complex n2)
+{
+    Complex temp;
+    temp.real = n1.real - n2.real;
+    temp.imag = n1.imag - n2.imag;
+    return temp;
+}
+
+Complex Mul(Complex n1, Complex n2)
+{
+    Complex temp;
+    temp.real = (n1.real * n2.real) - (n1.imag * n2.imag);
+    temp.imag = (n1.real * n2.imag) + (n1.imag * n2.real);
+    return temp;
+}
+
+void display(Complex n)
+{
+    printf("%.2f + %.2fi\n", n.real, n.imag);
+}
