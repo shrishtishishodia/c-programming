@@ -1,0 +1,69 @@
+```c
+#include<stdio.h>
+
+typedef struct
+{
+    char name[50];
+    int roll_no;
+    char mobile_no[15];
+    float CGPA;
+    char DoB[15];
+    char course[50];
+    int year;
+} Student;
+
+void input(Student *s);
+void display(Student s);
+int findTopper(Student s[], int n);
+
+void main()
+{
+    Student s[10];
+    int i, top;
+
+    for(i = 0; i < 10; i++)
+    {
+        input(&s[i]);
+    }
+
+    top = findTopper(s, 10);
+    display(s[top]);
+}
+
+void input(Student *s)
+{
+    scanf(" %[^\n]", s->name);
+    scanf("%d", &s->roll_no);
+    scanf("%s", s->mobile_no);
+    scanf("%f", &s->CGPA);
+    scanf("%s", s->DoB);
+    scanf(" %[^\n]", s->course);
+    scanf("%d", &s->year);
+}
+
+void display(Student s)
+{
+    printf("Name: %s\n", s.name);
+    printf("Roll No: %d\n", s.roll_no);
+    printf("Mobile No: %s\n", s.mobile_no);
+    printf("CGPA: %.2f\n", s.CGPA);
+    printf("Date of Birth: %s\n", s.DoB);
+    printf("Course: %s\n", s.course);
+    printf("Year: %d\n", s.year);
+}
+
+int findTopper(Student s[], int n)
+{
+    int i, top = 0;
+
+    for(i = 1; i < n; i++)
+    {
+        if(s[i].CGPA > s[top].CGPA)
+        {
+            top = i;
+        }
+    }
+
+    return top;
+}
+```
