@@ -1,4 +1,4 @@
-```c
+
 #include<stdio.h>
 
 typedef struct
@@ -67,3 +67,4 @@ int findTopper(Student s[], int n)
     return top;
 }
 ```
+
